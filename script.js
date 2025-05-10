@@ -1,7 +1,7 @@
 //constants are declared for the input button and task list area
 const taskInput=document.querySelector("#newtask input");
 const taskSection=document.querySelector('.tasks');
-//listener for the entry key,Used to add new task.
+//listener for the entr key,Used to add new task.
 taskInput.addEventListener("keyup",(e) => {
     if(e.key=="Enter"){
         createTask();
@@ -14,14 +14,14 @@ document.querySelector('#push').onclick = function(){
 //the function to create the task
 function createTask(){
     if(taskInput.value.length==0){
-        alert("The task field is blank,Enter a task name and try adain.");
+        alert("The task field is blank,Enter a task name and try again.");
     }
     else{
-        //this block inserts HTML that creates each area div element\
+        //this block inserts HTML that creates each area div element
         taskSection.innerHTML +=
         `<div class="task">
         <label id="taskname">
-        <input onclick="updateTask(this)"type="checkbox"id="check-task">
+        <input onclick="updateTask(this)" type="checkbox" id="check-task">
         <p>${document.querySelector('#newtask input').value}</p>
         </label>
         <div class="delete">
@@ -43,4 +43,3 @@ function updateTask(task){
         taskItem.classList.remove("checked");
     }
 }
-
